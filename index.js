@@ -25,7 +25,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 // app.use('/movies', routerMovies);
 app.use('/workouts', workoutsRouter);
-app.use('/user', usersRouter);
+app.use('/users', usersRouter);
 
 
 //ERRORS

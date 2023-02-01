@@ -6,12 +6,12 @@ const getUsers = async(req,res) => {
     try {        
         const allUsers = await User.find();
         //Set Headers
-        res.setHeader('Access-Control-Allow-Credentials', true);
-        res.setHeader('Access-Control-Allow-Origin', '*');
-        res.setHeader('Access-Control-Allow-Methods', 'GET,POST');
-        res.setHeader(
-            'Access-Control-Allow-Headers',
-            'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version');
+        // res.setHeader('Access-Control-Allow-Credentials', true);
+        // res.setHeader('Access-Control-Allow-Origin', '*');
+        // res.setHeader('Access-Control-Allow-Methods', 'GET,POST');
+        // res.setHeader(
+        //     'Access-Control-Allow-Headers',
+        //     'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version');
         //Set Response
         res.status(200).json(allUsers);
     } catch (error) {
@@ -27,12 +27,12 @@ const getUsersById = async (req,res) => {
             return res.status(400).send({code:400, message:`Undefined user with id: ${id}`});
         }
         //Set Headers
-        res.setHeader('Access-Control-Allow-Credentials', true);
-        res.setHeader('Access-Control-Allow-Origin', '*');
-        res.setHeader('Access-Control-Allow-Methods', 'GET,POST');
-        res.setHeader(
-            'Access-Control-Allow-Headers',
-            'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version');
+        // res.setHeader('Access-Control-Allow-Credentials', true);
+        // res.setHeader('Access-Control-Allow-Origin', '*');
+        // res.setHeader('Access-Control-Allow-Methods', 'GET,POST');
+        // res.setHeader(
+        //     'Access-Control-Allow-Headers',
+        //     'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version');
         //Set Response
         res.status(200).json(user);        
     } catch (error) {
@@ -48,12 +48,12 @@ const getUsersByEmail = async (req,res) => {
             return res.status(400).send({code:400, message:`Undefined user with id: ${id}`});
         }
         //Set Headers
-        res.setHeader('Access-Control-Allow-Credentials', true);
-        res.setHeader('Access-Control-Allow-Origin', '*');
-        res.setHeader('Access-Control-Allow-Methods', 'GET,POST');
-        res.setHeader(
-            'Access-Control-Allow-Headers',
-            'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version');
+        // res.setHeader('Access-Control-Allow-Credentials', true);
+        // res.setHeader('Access-Control-Allow-Origin', '*');
+        // res.setHeader('Access-Control-Allow-Methods', 'GET,POST');
+        // res.setHeader(
+        //     'Access-Control-Allow-Headers',
+        //     'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version');
         //Set Response
         res.status(200).json(user);        
     } catch (error) {
@@ -78,12 +78,12 @@ const postUser = async (req,res) => {
         //Save User
         const createdUser = await user.save();
         //Set Headers
-        res.setHeader('Access-Control-Allow-Credentials', true);
-        res.setHeader('Access-Control-Allow-Origin', '*');
-        res.setHeader('Access-Control-Allow-Methods', 'GET,POST');
-        res.setHeader(
-            'Access-Control-Allow-Headers',
-            'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version');
+        // res.setHeader('Access-Control-Allow-Credentials', true);
+        // res.setHeader('Access-Control-Allow-Origin', '*');
+        // res.setHeader('Access-Control-Allow-Methods', 'GET,POST');
+        // res.setHeader(
+        //     'Access-Control-Allow-Headers',
+        //     'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version');
         //Set Response
         return res.status(200).json(createdUser);
     } catch (error) {

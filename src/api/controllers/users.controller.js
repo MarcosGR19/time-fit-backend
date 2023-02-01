@@ -25,6 +25,19 @@ const getUsersById = async (req,res) => {
     }
 };
 
+const getUsersByEmail = async (req,res) => {
+    try {
+        const {email} = req.params;
+        const user = await User.find({email:email});
+        if(user === null){
+            return res.status(400).send({code:400, message:`Undefined user with id: ${id}`});
+        }
+        res.status(200).json(user);        
+    } catch (error) {
+        return res.status(error?.code || 400).send({code:error?.code || 400, message:error?.message});
+    }
+};
+
 const postUser = async (req,res) => {
     try {
         const user = new User(req.body);
@@ -52,5 +65,6 @@ const postUser = async (req,res) => {
 module.exports = {
     getUsers,
     getUsersById,
-    postUser
+    postUser,
+    getUsersByEmail
 }
